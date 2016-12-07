@@ -18,6 +18,7 @@
 		20997CB88E8B42C07123808C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 209972BF1EDFB4403F966F97 /* AppDelegate.m */; };
 		20997D4293F31D1F488577F8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20997CF8F25DD6146DF6B557 /* Info.plist */; };
 		20997F2F3F44025B1FCE69FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20997FDD381703C4BDA632BC /* Assets.xcassets */; };
+		FCE7C7B01DF86AB4000191F3 /* AKKAAEManagedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7C7AF1DF86AB4000191F3 /* AKKAAEManagedValue.m */; };
 		FCECDB451DF692B600028C68 /* AKKAAEArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FCECDB441DF692B600028C68 /* AKKAAEArray.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		20997E98B7C514A992EB09DF /* AKKAAudioEngineSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKKAAudioEngineSampleTests.m; sourceTree = "<group>"; };
 		20997FDD381703C4BDA632BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20997FDEBB757C3DBF892596 /* AKKAAudioEngineSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKKAAudioEngineSampleUITests.m; sourceTree = "<group>"; };
+		FCE7C7AE1DF86AB4000191F3 /* AKKAAEManagedValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEManagedValue.h; sourceTree = "<group>"; };
+		FCE7C7AF1DF86AB4000191F3 /* AKKAAEManagedValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAEManagedValue.m; sourceTree = "<group>"; };
 		FCECDB431DF692B600028C68 /* AKKAAEArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEArray.h; sourceTree = "<group>"; };
 		FCECDB441DF692B600028C68 /* AKKAAEArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAEArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +163,8 @@
 			children = (
 				FCECDB431DF692B600028C68 /* AKKAAEArray.h */,
 				FCECDB441DF692B600028C68 /* AKKAAEArray.m */,
+				FCE7C7AE1DF86AB4000191F3 /* AKKAAEManagedValue.h */,
+				FCE7C7AF1DF86AB4000191F3 /* AKKAAEManagedValue.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				FCECDB451DF692B600028C68 /* AKKAAEArray.m in Sources */,
 				20997CB88E8B42C07123808C /* AppDelegate.m in Sources */,
 				2099742D51E2EB039333DF94 /* ViewController.m in Sources */,
+				FCE7C7B01DF86AB4000191F3 /* AKKAAEManagedValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
