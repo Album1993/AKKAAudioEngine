@@ -13,7 +13,7 @@ extern "C" {
     
 #import <Foundation/Foundation.h>
 
-typedef const void * AEArrayToken; //!< Token for real-thread use
+typedef const void * AKKAAEArrayToken; //!< Token for real-thread use
     
 /*!
  * Block for mapping between objects and opaque pointer values
@@ -77,11 +77,11 @@ typedef void * _Nullable (^AKKAAEArrayIndexedCustomMappingBlock)(id _Nonnull ite
  * 将与此类型匹配的块分配给AEArray的releaseBlock属性以提供自定义发布实现。
  * 如果您使用自定义映射块并需要执行额外的清除任务，而不仅仅是释放返回的指针，则使用此选项。
  * */
-typedef void (^AEArrayReleaseBlock)(id _Nonnull item, void * _Nonnull bytes);
+typedef void (^AKKAAEArrayReleaseBlock)(id _Nonnull item, void * _Nonnull bytes);
 
 // Some indirection macros required for AEArrayEnumerate
-#define __AEArrayVar2(x, y) x ## y
-#define __AEArrayVar(x, y) __AEArrayVar2(__ ## x ## _line_, y)
+#define __AKKAAEArrayVar2(x, y) x ## y
+#define __AKKAAEArrayVar(x, y) __AEArrayVar2(__ ## x ## _line_, y)
 
 
 /*!
@@ -207,8 +207,6 @@ typedef void (^AEArrayReleaseBlock)(id _Nonnull item, void * _Nonnull bytes);
          *
          * 如果使用此方法提供自定义映射，则将使用它替代初始化此实例（如果有）时提供的自定义映射，以用于上一个数组值中不存在的所有新值。 这允许您在调用此方法时捕获特定于单个更新的状态。
          *
-         * @param array
-         * @param block
          */
 
 - (void)updateWithContentsOfArray:(NSArray * _Nonnull)array customMapping:(AKKAAEArrayIndexedCustomMappingBlock _Nullable)block;
@@ -227,6 +225,14 @@ typedef void (^AEArrayReleaseBlock)(id _Nonnull item, void * _Nonnull bytes);
  * @param index Index of the item to retrieve
  * @return Pointer to the item at the given index
  */
+
+/*!
+ * 获取C数组的给定索引处的指针值，如音频线程所示
+ *
+ * 此方法允许您访问与音频线程相同的值; 如果您使用映射块来创建与原始数组中的对象对应的结构，那么您可以使用此方法访问这些结构。
+ *
+ * 注意：小心如果修改这些值，因为它们也可以从音频线程访问。 如果你想对音频线程进行原子性的更改，请使用@link updatePointerValue：forObject：@endlink。
+ */
 - (void * _Nullable)pointerValueAtIndex:(int)index;
 
 /*!
@@ -243,6 +249,12 @@ typedef void (^AEArrayReleaseBlock)(id _Nonnull item, void * _Nonnull bytes);
  * @param object The object
  * @return Pointer to the item corresponding to the object
  */
+
+/*
+ * 获取与给定对象相关联的指针值（如果有）
+ * 此方法允许您访问与音频线程相同的值; 如果您使用映射块来创建与原始数组中的对象对应的结构，那么您可以使用此方法访问这些结构。
+ * 注意：小心如果修改这些值，因为它们也可以从音频线程访问。 如果你想对音频线程进行原子性的更改，请使用@link updatePointerValue：forObject：@endlink
+ */
 - (void * _Nullable)pointerValueForObject:(id _Nonnull)object;
 
 /*!
@@ -258,10 +270,19 @@ typedef void (^AEArrayReleaseBlock)(id _Nonnull item, void * _Nonnull bytes);
  * @param value The new pointer value
  * @param object The associated object
  */
+
+/*
+ *更新与给定对象相关联的指针值
+ * 如果使用映射块来创建与原始数组中的对象相对应的结构，则可以使用此方法相对于音频线程以原子方式更新这些结构。
+ * 与此对象关联的先前值将被释放，可能调用您的@link releaseBlock @endlink（如果提供）。
+ **/
 - (void)updatePointerValue:(void * _Nullable)value forObject:(id _Nonnull)object;
 
 /*!
  * Access objects using subscript syntax
+ */
+/**
+ * 通过下标获得对象
  */
 - (id _Nullable)objectAtIndexedSubscript:(NSUInteger)idx;
 
@@ -279,7 +300,17 @@ typedef void (^AEArrayReleaseBlock)(id _Nonnull item, void * _Nonnull bytes);
  * @param array The array
  * @return The token, for use with other accessors
  */
-AEArrayToken _Nonnull AEArrayGetToken(__unsafe_unretained AEArray * _Nonnull array);
+
+/**
+ *获取数组token，用于实时音频线程
+ * 为了在音频线程上访问这个类，你应该首先使用AEArrayGetToken获取一个令牌来访问对象。
+ * 然后，将该令牌传递给AEArrayGetCount或AEArrayGetItem。
+ * 令牌保持有效，直到下一次调用AEArrayGetToken时为止，在此之后，数组值可能不同。 
+ * 因此，建议每个渲染循环只调用一次AEArrayGetToken。
+ *
+ * 注意：不要在主螺纹上使用此功能
+ */
+AKKAAEArrayToken _Nonnull AKKAAEArrayGetToken(__unsafe_unretained AKKAAEArray * _Nonnull array);
 
 /*!
  * Get the number of items in the array
@@ -287,7 +318,11 @@ AEArrayToken _Nonnull AEArrayGetToken(__unsafe_unretained AEArray * _Nonnull arr
  * @param token The array token, as returned from AEArrayGetToken
  * @return Item count
  */
-int AEArrayGetCount(AEArrayToken _Nonnull token);
+
+/*
+ 获取数组中的项数
+ */
+int AKKAAEArrayGetCount(AKKAAEArrayToken _Nonnull token);
 
 /*!
  * Get the item at a given index
@@ -296,7 +331,11 @@ int AEArrayGetCount(AEArrayToken _Nonnull token);
  * @param index The item index
  * @return Item at the given index
  */
-void * _Nullable AEArrayGetItem(AEArrayToken _Nonnull token, int index);
+
+/*
+ 获取给定index的item
+ */
+void * _Nullable AKKAAEArrayGetItem(AKKAAEArrayToken _Nonnull token, int index);
 
 /*!
  * Enumerate object types in the array, for use on audio thread
@@ -319,14 +358,26 @@ void * _Nullable AEArrayGetItem(AEArrayToken _Nonnull token, int index);
  * @param type The object type
  * @param varname Name of object variable for inner loop
  */
-#define AEArrayEnumerateObjects(array, type, varname) \
-    AEArrayToken __AEArrayVar(token, __LINE__) = AEArrayGetToken(array); \
-    int __AEArrayVar(count, __LINE__) = AEArrayGetCount(__AEArrayVar(token, __LINE__)); \
-    int __AEArrayVar(i, __LINE__) = 0; \
-    for ( __unsafe_unretained type varname = __AEArrayVar(count, __LINE__) > 0 ? (__bridge type)AEArrayGetItem(__AEArrayVar(token, __LINE__), 0) : NULL; \
-          __AEArrayVar(i, __LINE__) < __AEArrayVar(count, __LINE__); \
-          __AEArrayVar(i, __LINE__)++, varname = __AEArrayVar(i, __LINE__) < __AEArrayVar(count, __LINE__) ? \
-            (__bridge type)AEArrayGetItem(__AEArrayVar(token, __LINE__), __AEArrayVar(i, __LINE__)) : NULL )
+
+/**
+ * 枚举数组中的对象类型，用于音频线程
+ * 这个方便的宏提供以实时线程安全的方式枚举数组中的对象的能力。
+ * Use it like:
+ *
+ *      AEArrayEnumerateObjects(array, MyObjectType *, myVar) {
+ *          // Do stuff with myVar, which is a MyObjectType *
+ *      }
+ * 注意：此宏调用AEArrayGetToken以访问数组。 因此，除了枚举之外，当您需要访问数组时，不建议使用它。
+ * 注意：不要在主线程上使用此宏
+ */
+#define AKKAAEArrayEnumerateObjects(array, type, varname) \
+    AKKAAEArrayToken __AKKAAEArrayVar(token, __LINE__) = AKKAAEArrayGetToken(array); \
+    int __AKKAAEArrayVar(count, __LINE__) = AKKAAEArrayGetCount(__AKKAAEArrayVar(token, __LINE__)); \
+    int __AKKAAEArrayVar(i, __LINE__) = 0; \
+    for ( __unsafe_unretained type varname = __AKKAAEArrayVar(count, __LINE__) > 0 ? (__bridge type)AKKAAEArrayGetItem(__AKKAAEArrayVar(token, __LINE__), 0) : NULL; \
+          __AKKAAEArrayVar(i, __LINE__) < __AKKAAEArrayVar(count, __LINE__); \
+          __AKKAAEArrayVar(i, __LINE__)++, varname = __AKKAAEArrayVar(i, __LINE__) < __AKKAAEArrayVar(count, __LINE__) ? \
+            (__bridge type)AKKAAEArrayGetItem(__AKKAAEArrayVar(token, __LINE__), __AKKAAEArrayVar(i, __LINE__)) : NULL )
 
 /*!
  * Enumerate pointer types in the array, for use on audio thread
@@ -350,14 +401,14 @@ void * _Nullable AEArrayGetItem(AEArrayToken _Nonnull token, int index);
  * @param type The pointer type (e.g. struct myStruct *)
  * @param varname Name of pointer variable for inner loop
  */
-#define AEArrayEnumeratePointers(array, type, varname) \
-    AEArrayToken __AEArrayVar(token, __LINE__) = AEArrayGetToken(array); \
-    int __AEArrayVar(count, __LINE__) = AEArrayGetCount(__AEArrayVar(token, __LINE__)); \
-    int __AEArrayVar(i, __LINE__) = 0; \
-    for ( type varname = __AEArrayVar(count, __LINE__) > 0 ? (type)AEArrayGetItem(__AEArrayVar(token, __LINE__), 0) : NULL; \
-          __AEArrayVar(i, __LINE__) < __AEArrayVar(count, __LINE__); \
-          __AEArrayVar(i, __LINE__)++, varname = __AEArrayVar(i, __LINE__) < __AEArrayVar(count, __LINE__) ? \
-            (type)AEArrayGetItem(__AEArrayVar(token, __LINE__), __AEArrayVar(i, __LINE__)) : NULL )
+#define AKKAAEArrayEnumeratePointers(array, type, varname) \
+    AKKAAEArrayToken __AKKAAEArrayVar(token, __LINE__) = AKKAAEArrayGetToken(array); \
+    int __AKKAAEArrayVar(count, __LINE__) = AKKAAEArrayGetCount(__AKKAAEArrayVar(token, __LINE__)); \
+    int __AKKAAEArrayVar(i, __LINE__) = 0; \
+    for ( type varname = __AKKAAEArrayVar(count, __LINE__) > 0 ? (type)AKKAAEArrayGetItem(__AKKAAEArrayVar(token, __LINE__), 0) : NULL; \
+          __AKKAAEArrayVar(i, __LINE__) < __AKKAAEArrayVar(count, __LINE__); \
+          __AKKAAEArrayVar(i, __LINE__)++, varname = __AKKAAEArrayVar(i, __LINE__) < __AKKAAEArrayVar(count, __LINE__) ? \
+            (type)AKKAAEArrayGetItem(__AKKAAEArrayVar(token, __LINE__), __AKKAAEArrayVar(i, __LINE__)) : NULL )
 
 
 //! Number of values in array
@@ -368,7 +419,7 @@ void * _Nullable AEArrayGetItem(AEArrayToken _Nonnull token, int index);
 
 //! Block to perform when deleting old items, on main thread. If not specified, will simply use
 //! free() to dispose bytes, if pointer differs from original Objective-C pointer.
-@property (nonatomic, copy) AEArrayReleaseBlock _Nullable releaseBlock;
+@property (nonatomic, copy) AKKAAEArrayReleaseBlock _Nullable releaseBlock;
 
 @end
 
