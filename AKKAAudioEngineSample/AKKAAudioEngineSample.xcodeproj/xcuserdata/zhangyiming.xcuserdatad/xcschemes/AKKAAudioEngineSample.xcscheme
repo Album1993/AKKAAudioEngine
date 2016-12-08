@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "20997F3D744326847C01C130"
-               BuildableName = "AKKAAudioEngineSample.app"
+               BuildableName = "AKKAAudioEngineSample"
                BlueprintName = "AKKAAudioEngineSample"
                ReferencedContainer = "container:AKKAAudioEngineSample.xcodeproj">
             </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20997F3D744326847C01C130"
-            BuildableName = "AKKAAudioEngineSample.app"
+            BuildableName = "AKKAAudioEngineSample"
             BlueprintName = "AKKAAudioEngineSample"
             ReferencedContainer = "container:AKKAAudioEngineSample.xcodeproj">
          </BuildableReference>

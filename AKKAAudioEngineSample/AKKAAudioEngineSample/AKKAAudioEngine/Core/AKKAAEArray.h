@@ -250,7 +250,7 @@ typedef void (^AKKAAEArrayReleaseBlock)(id _Nonnull item, void * _Nonnull bytes)
  * @return Pointer to the item corresponding to the object
  */
 
-/*
+/*!
  * 获取与给定对象相关联的指针值（如果有）
  * 此方法允许您访问与音频线程相同的值; 如果您使用映射块来创建与原始数组中的对象对应的结构，那么您可以使用此方法访问这些结构。
  * 注意：小心如果修改这些值，因为它们也可以从音频线程访问。 如果你想对音频线程进行原子性的更改，请使用@link updatePointerValue：forObject：@endlink
@@ -271,7 +271,7 @@ typedef void (^AKKAAEArrayReleaseBlock)(id _Nonnull item, void * _Nonnull bytes)
  * @param object The associated object
  */
 
-/*
+/*!
  *更新与给定对象相关联的指针值
  * 如果使用映射块来创建与原始数组中的对象相对应的结构，则可以使用此方法相对于音频线程以原子方式更新这些结构。
  * 与此对象关联的先前值将被释放，可能调用您的@link releaseBlock @endlink（如果提供）。
@@ -319,7 +319,7 @@ AKKAAEArrayToken _Nonnull AKKAAEArrayGetToken(__unsafe_unretained AKKAAEArray * 
  * @return Item count
  */
 
-/*
+/*!
  获取数组中的项数
  */
 int AKKAAEArrayGetCount(AKKAAEArrayToken _Nonnull token);
@@ -332,7 +332,7 @@ int AKKAAEArrayGetCount(AKKAAEArrayToken _Nonnull token);
  * @return Item at the given index
  */
 
-/*
+/*!
  获取给定index的item
  */
 void * _Nullable AKKAAEArrayGetItem(AKKAAEArrayToken _Nonnull token, int index);

@@ -9,7 +9,9 @@
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/ViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AppDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/main.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/Info.plist" isTestSource="false" />
