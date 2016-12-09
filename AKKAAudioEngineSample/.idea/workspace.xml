@@ -14,20 +14,18 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_dcaa9dea99f17169239dc643ec3d8272c888dc8d" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
   <component name="FavoritesManager">
     <favorites_list name="AKKAAudioEngineSample" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="AKKAAEArray.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2873">
+            <state relative-caret-position="2700">
               <caret line="180" column="12" selection-start-line="180" selection-start-column="12" selection-end-line="180" selection-end-column="12" />
-              <folding>
-                <element signature="e#15905#15906#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -35,26 +33,27 @@
       <file leaf-file-name="AKKAAEManagedValue.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AKKAAEArray.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="869">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state relative-caret-position="1225">
+              <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
               <folding>
-                <element signature="e#1523#1573#0" expanded="true" />
+                <element signature="e#162#174#0" expanded="true" />
+                <element signature="e#5729#5730#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AKKAAEManagedValue.m" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AKKAAEArray.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="79" column="114" selection-start-line="79" selection-start-column="106" selection-end-line="79" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AKKAAEManagedValue.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -71,6 +70,7 @@
       <list>
         <option value="$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.h" />
         <option value="$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.m" />
+        <option value="$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.h" />
       </list>
     </option>
   </component>
@@ -81,10 +81,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="x" value="268" />
+    <option name="y" value="200" />
+    <option name="width" value="1590" />
+    <option name="height" value="752" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -111,7 +111,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -176,6 +175,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="RunManager" selected="Application.AKKAAudioEngineSample">
@@ -209,18 +209,19 @@
       <updated>1481005726906</updated>
       <workItem from="1481005728917" duration="20000" />
       <workItem from="1481080125979" duration="5040000" />
+      <workItem from="1481261445359" duration="3008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5060000" />
+    <option name="totallyTimeSpent" value="8068000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1920" height="1057" extended-state="0" />
+    <frame x="268" y="200" width="1590" height="752" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30210325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -255,6 +256,33 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="180" column="12" selection-start-line="180" selection-start-column="12" selection-end-line="180" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#162#174#0" expanded="true" />
+            <element signature="e#5729#5730#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -265,29 +293,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2873">
+        <state relative-caret-position="2700">
           <caret line="180" column="12" selection-start-line="180" selection-start-column="12" selection-end-line="180" selection-end-column="12" />
-          <folding>
-            <element signature="e#15905#15906#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="869">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state relative-caret-position="175">
+          <caret line="79" column="114" selection-start-line="79" selection-start-column="106" selection-end-line="79" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1225">
+          <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
           <folding>
-            <element signature="e#1523#1573#0" expanded="true" />
+            <element signature="e#162#174#0" expanded="true" />
+            <element signature="e#5729#5730#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

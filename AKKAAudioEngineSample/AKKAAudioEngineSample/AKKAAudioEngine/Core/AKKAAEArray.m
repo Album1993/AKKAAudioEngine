@@ -10,7 +10,7 @@
 #import "AKKAAEManagedValue.h"
 
 typedef struct {
-    void * pointer;
+    void * pointer; // 存储allvalues 中每个单个数据
     int referenceCount;
 } array_entry_t;
 
@@ -105,10 +105,81 @@ typedef struct {
     if (!array->objects) return;
     NSUInteger index = [array->objects indexOfObject:object];
     if (index == NSNotFound || index >= array->count) return;
-    size_t size = 
+    size_t size = sizeof(array_t) + (sizeof(void *) * array->count - 1);
+    array_t * newArray = (array_t *)malloc(size);
+    memcpy(newArray, array, size);
+    
+    newArray->entries[index] = (array_entry_t *)malloc(sizeof(array_entry_t));
+    newArray->entries[index]->pointer = value;
+    newArray->entries[index]->referenceCount = 1;
+    
+    for (int i = 0; i < newArray->count; i++) {
+        if (i != index)  newArray->entries[i]->referenceCount++;
+    }
+    CFBridgingRetain(newArray->objects);
+    _value.pointerValue = newArray;
+}
+
+- (void)updateWithContentsOfArray:(NSArray *)array {
+    [self updateWithContentsOfArray:array
+                      customMapping:nil];
+}
+
+- (void)updateWithContentsOfArray:(NSArray *)array customMapping:(AKKAAEArrayIndexedCustomMappingBlock)block {
+    array_t * currentArray = (array_t *)_value.pointerValue;
+    if (currentArray && currentArray->objects && [currentArray->objects isEqualToArray:array]) {
+        return;
+    }
+    
+    array = [array copy];
+    array_t * newArray = (array_t *)malloc(sizeof(array_t) + (sizeof(void *) * array.count -1));
+    newArray->count = (int)array.count;
+    newArray->objects = array;
+    CFBridgingRetain(array);
+    
+    array_t * priorArray = (array_t *)_value.pointerValue;
+    
+    int i = 0;
+    for (id item in array) {
+        NSUInteger priorIndex = priorArray && priorArray->objects ? [priorArray->objects indexOfObject:item] : NSNotFound;
+        if (priorIndex != NSNotFound) {
+            newArray->entries[i] = priorArray->entries[priorIndex];
+            newArray->entries[i]->referenceCount++;
+        } else {
+            newArray->entries[i] = (array_entry_t *)malloc(sizeof(array_entry_t));
+            newArray->entries[i]->pointer = block ? block(item,i) : _mappingBlock ? _mappingBlock(item) : (__bridge void *)item;
+            newArray->entries[i]->referenceCount = 1;
+        }
+        i++;
+    }
+    _value.pointerValue = newArray;
+}
+
+AKKAAEArrayToken AKKAAEArrayGetToken(__unsafe_unretained AKKAAEArray * THIS) {
+    return AKKAAEManagedValueGetValue(THIS->_value);
+}
+
+int AKKAAEArrayGetCount(AKKAAEArrayToken _Nonnull token) {
+    return ((array_t *) token)->count;
+}
+
+void * _Nullable AKKAAEArrayGetItem(AKKAAEArrayToken _Nonnull token, int index) {
+    return ((array_t *)token)->entries[index]->pointer;
 }
 
 - (void)releaseOldArray:(array_t *)array {
-
+    for (int i = 0; i < array->count; i++) {
+        array->entries[i]->referenceCount--;
+        if (array->entries[i]->referenceCount == 0) {
+            if (_releaseBlock) {
+                _releaseBlock(array->objects[i],array->entries[i]->pointer);
+            } else if(array->entries[i]->pointer && array->entries[i]->pointer != (__bridge void *)array->objects[i]) {
+                free(array->entries[i]->pointer);// 如果不相同就单独释放，相同就在下面一起释放
+            }
+            free(array->entries[i]);
+        }
+    }
+    if (array->objects) CFBridgingRelease((__bridge CFTypeRef)array->objects);
+    free(array);
 }
 @end
