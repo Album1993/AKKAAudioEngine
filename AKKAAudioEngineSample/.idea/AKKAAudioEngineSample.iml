@@ -6,14 +6,16 @@
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSampleUITests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSampleTests/AKKAAudioEngineSampleTests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSampleTests/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/ViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AppDelegate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/main.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/main.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/AKKAAEWeakRetainingProxy.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/AKKAAEWeakRetainingProxy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/ViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AppDelegate.m" isTestSource="false" />

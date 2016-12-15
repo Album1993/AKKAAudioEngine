@@ -18,6 +18,10 @@
 		20997CB88E8B42C07123808C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 209972BF1EDFB4403F966F97 /* AppDelegate.m */; };
 		20997D4293F31D1F488577F8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20997CF8F25DD6146DF6B557 /* Info.plist */; };
 		20997F2F3F44025B1FCE69FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20997FDD381703C4BDA632BC /* Assets.xcassets */; };
+		FC3964EF1E0239F100372C4C /* AKKAAETypes.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3964EE1E0239F100372C4C /* AKKAAETypes.m */; };
+		FC3964F21E0249A700372C4C /* AKKAAETime.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3964F11E0249A700372C4C /* AKKAAETime.m */; };
+		FCDA9E8C1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDA9E8B1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m */; };
+		FCDA9E8F1DFFD6830051C0D1 /* AKKAAEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDA9E8E1DFFD6830051C0D1 /* AKKAAEUtilities.m */; };
 		FCE7C7B01DF86AB4000191F3 /* AKKAAEManagedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7C7AF1DF86AB4000191F3 /* AKKAAEManagedValue.m */; };
 		FCECDB451DF692B600028C68 /* AKKAAEArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FCECDB441DF692B600028C68 /* AKKAAEArray.m */; };
 /* End PBXBuildFile section */
@@ -56,6 +60,14 @@
 		20997E98B7C514A992EB09DF /* AKKAAudioEngineSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKKAAudioEngineSampleTests.m; sourceTree = "<group>"; };
 		20997FDD381703C4BDA632BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20997FDEBB757C3DBF892596 /* AKKAAudioEngineSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKKAAudioEngineSampleUITests.m; sourceTree = "<group>"; };
+		FC3964ED1E0239F100372C4C /* AKKAAETypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAETypes.h; sourceTree = "<group>"; };
+		FC3964EE1E0239F100372C4C /* AKKAAETypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAETypes.m; sourceTree = "<group>"; };
+		FC3964F01E0249A700372C4C /* AKKAAETime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAETime.h; sourceTree = "<group>"; };
+		FC3964F11E0249A700372C4C /* AKKAAETime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAETime.m; sourceTree = "<group>"; };
+		FCDA9E8A1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEWeakRetainingProxy.h; sourceTree = "<group>"; };
+		FCDA9E8B1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAEWeakRetainingProxy.m; sourceTree = "<group>"; };
+		FCDA9E8D1DFFD6830051C0D1 /* AKKAAEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEUtilities.h; sourceTree = "<group>"; };
+		FCDA9E8E1DFFD6830051C0D1 /* AKKAAEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAEUtilities.m; sourceTree = "<group>"; };
 		FCE7C7AE1DF86AB4000191F3 /* AKKAAEManagedValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEManagedValue.h; sourceTree = "<group>"; };
 		FCE7C7AF1DF86AB4000191F3 /* AKKAAEManagedValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAEManagedValue.m; sourceTree = "<group>"; };
 		FCECDB431DF692B600028C68 /* AKKAAEArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEArray.h; sourceTree = "<group>"; };
@@ -150,9 +162,21 @@
 			path = AKKAAudioEngineSampleUITests;
 			sourceTree = "<group>";
 		};
+		FCDA9E891DFFAC7E0051C0D1 /* Utilitites */ = {
+			isa = PBXGroup;
+			children = (
+				FCDA9E8A1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.h */,
+				FCDA9E8B1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m */,
+				FCDA9E8D1DFFD6830051C0D1 /* AKKAAEUtilities.h */,
+				FCDA9E8E1DFFD6830051C0D1 /* AKKAAEUtilities.m */,
+			);
+			name = Utilitites;
+			sourceTree = "<group>";
+		};
 		FCECDB401DF6924A00028C68 /* AKKAAudioEngine */ = {
 			isa = PBXGroup;
 			children = (
+				FCDA9E891DFFAC7E0051C0D1 /* Utilitites */,
 				FCECDB421DF6927200028C68 /* Core */,
 			);
 			path = AKKAAudioEngine;
@@ -165,6 +189,10 @@
 				FCECDB441DF692B600028C68 /* AKKAAEArray.m */,
 				FCE7C7AE1DF86AB4000191F3 /* AKKAAEManagedValue.h */,
 				FCE7C7AF1DF86AB4000191F3 /* AKKAAEManagedValue.m */,
+				FC3964ED1E0239F100372C4C /* AKKAAETypes.h */,
+				FC3964EE1E0239F100372C4C /* AKKAAETypes.m */,
+				FC3964F01E0249A700372C4C /* AKKAAETime.h */,
+				FC3964F11E0249A700372C4C /* AKKAAETime.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -232,6 +260,11 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = AKKA;
+				TargetAttributes = {
+					20997F3D744326847C01C130 = {
+						DevelopmentTeam = 26B9393KWV;
+					};
+				};
 			};
 			buildConfigurationList = 209979716136893E4A8A2489 /* Build configuration list for PBXProject "AKKAAudioEngineSample" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -287,9 +320,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCDA9E8C1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m in Sources */,
 				20997A5E34E08631D194A17E /* main.m in Sources */,
+				FCDA9E8F1DFFD6830051C0D1 /* AKKAAEUtilities.m in Sources */,
+				FC3964EF1E0239F100372C4C /* AKKAAETypes.m in Sources */,
 				FCECDB451DF692B600028C68 /* AKKAAEArray.m in Sources */,
 				20997CB88E8B42C07123808C /* AppDelegate.m in Sources */,
+				FC3964F21E0249A700372C4C /* AKKAAETime.m in Sources */,
 				2099742D51E2EB039333DF94 /* ViewController.m in Sources */,
 				FCE7C7B01DF86AB4000191F3 /* AKKAAEManagedValue.m in Sources */,
 			);
@@ -464,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 26B9393KWV;
 				INFOPLIST_FILE = AKKAAudioEngineSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = akka.AKKAAudioEngineSample;
@@ -487,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 26B9393KWV;
 				INFOPLIST_FILE = AKKAAudioEngineSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = akka.AKKAAudioEngineSample;
