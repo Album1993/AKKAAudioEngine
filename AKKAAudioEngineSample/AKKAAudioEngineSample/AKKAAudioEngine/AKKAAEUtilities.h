@@ -14,8 +14,6 @@ extern "C" {
 #import <AudioToolbox/AudioToolbox.h>
 #import "AKKAAETypes.h"
 
-@interface AKKAAEUtilities : NSObject
-
 /*!
  * Create an AudioComponentDescription structure
  *
@@ -55,7 +53,7 @@ void AKKAAEError(OSStatus result, const char * _Nonnull operation, const char * 
  * @param result The result
  * @param operation A description of the operation, for logging purposes
  */
-#define AKKAAECheckOSStatus(result,operation) (_AECheckOSStatus((result),(operation),strrchr(__FILE__, '/')+1,__LINE__))
+#define AKKAAECheckOSStatus(result,operation) (_AKKAAECheckOSStatus((result),(operation),strrchr(__FILE__, '/')+1,__LINE__))
 static inline BOOL _AKKAAECheckOSStatus(OSStatus result, const char * _Nonnull operation, const char * _Nonnull file, int line) {
     if ( result != noErr ) {
         AKKAAEError(result, operation, file, line);
@@ -105,7 +103,7 @@ ExtAudioFileRef _Nullable AKKAAEExtAudioFileCreate(NSURL * _Nonnull url,
                                                    AKKAAEAudioFileType fileType,
                                                    double sampleRate,
                                                    int channelCount,
-                                                   NSError * _Nullable error);
+                                                   NSError * _Nullable * _Nullable error);
 
 /*!
  * Open an audio file for reading
@@ -130,7 +128,6 @@ ExtAudioFileRef _Nullable AEExtAudioFileOpen(NSURL * _Nonnull url,
                                              NSError * _Nullable * _Nullable error);
 
 
-@end
 #ifdef __cplusplus
 }
 #endif

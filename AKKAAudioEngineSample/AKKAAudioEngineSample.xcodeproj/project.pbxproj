@@ -20,6 +20,9 @@
 		20997F2F3F44025B1FCE69FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20997FDD381703C4BDA632BC /* Assets.xcassets */; };
 		FC3964EF1E0239F100372C4C /* AKKAAETypes.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3964EE1E0239F100372C4C /* AKKAAETypes.m */; };
 		FC3964F21E0249A700372C4C /* AKKAAETime.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3964F11E0249A700372C4C /* AKKAAETime.m */; };
+		FC59851E1E039259005FD7D4 /* AKKAAEBufferStack.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59851D1E039259005FD7D4 /* AKKAAEBufferStack.m */; };
+		FC5985211E03C9D7005FD7D4 /* AKKAAEDSPUtilties.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5985201E03C9D7005FD7D4 /* AKKAAEDSPUtilties.m */; };
+		FC5985241E03CA09005FD7D4 /* AKKAAEAudioBufferListUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5985231E03CA09005FD7D4 /* AKKAAEAudioBufferListUtilities.m */; };
 		FCDA9E8C1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDA9E8B1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m */; };
 		FCDA9E8F1DFFD6830051C0D1 /* AKKAAEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDA9E8E1DFFD6830051C0D1 /* AKKAAEUtilities.m */; };
 		FCE7C7B01DF86AB4000191F3 /* AKKAAEManagedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7C7AF1DF86AB4000191F3 /* AKKAAEManagedValue.m */; };
@@ -64,6 +67,12 @@
 		FC3964EE1E0239F100372C4C /* AKKAAETypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAETypes.m; sourceTree = "<group>"; };
 		FC3964F01E0249A700372C4C /* AKKAAETime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAETime.h; sourceTree = "<group>"; };
 		FC3964F11E0249A700372C4C /* AKKAAETime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAETime.m; sourceTree = "<group>"; };
+		FC59851C1E039259005FD7D4 /* AKKAAEBufferStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEBufferStack.h; sourceTree = "<group>"; };
+		FC59851D1E039259005FD7D4 /* AKKAAEBufferStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAEBufferStack.m; sourceTree = "<group>"; };
+		FC59851F1E03C9D7005FD7D4 /* AKKAAEDSPUtilties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEDSPUtilties.h; sourceTree = "<group>"; };
+		FC5985201E03C9D7005FD7D4 /* AKKAAEDSPUtilties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAEDSPUtilties.m; sourceTree = "<group>"; };
+		FC5985221E03CA09005FD7D4 /* AKKAAEAudioBufferListUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEAudioBufferListUtilities.h; sourceTree = "<group>"; };
+		FC5985231E03CA09005FD7D4 /* AKKAAEAudioBufferListUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAEAudioBufferListUtilities.m; sourceTree = "<group>"; };
 		FCDA9E8A1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEWeakRetainingProxy.h; sourceTree = "<group>"; };
 		FCDA9E8B1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKKAAEWeakRetainingProxy.m; sourceTree = "<group>"; };
 		FCDA9E8D1DFFD6830051C0D1 /* AKKAAEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKKAAEUtilities.h; sourceTree = "<group>"; };
@@ -169,6 +178,10 @@
 				FCDA9E8B1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m */,
 				FCDA9E8D1DFFD6830051C0D1 /* AKKAAEUtilities.h */,
 				FCDA9E8E1DFFD6830051C0D1 /* AKKAAEUtilities.m */,
+				FC59851F1E03C9D7005FD7D4 /* AKKAAEDSPUtilties.h */,
+				FC5985201E03C9D7005FD7D4 /* AKKAAEDSPUtilties.m */,
+				FC5985221E03CA09005FD7D4 /* AKKAAEAudioBufferListUtilities.h */,
+				FC5985231E03CA09005FD7D4 /* AKKAAEAudioBufferListUtilities.m */,
 			);
 			name = Utilitites;
 			sourceTree = "<group>";
@@ -193,6 +206,8 @@
 				FC3964EE1E0239F100372C4C /* AKKAAETypes.m */,
 				FC3964F01E0249A700372C4C /* AKKAAETime.h */,
 				FC3964F11E0249A700372C4C /* AKKAAETime.m */,
+				FC59851C1E039259005FD7D4 /* AKKAAEBufferStack.h */,
+				FC59851D1E039259005FD7D4 /* AKKAAEBufferStack.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -322,10 +337,13 @@
 			files = (
 				FCDA9E8C1DFFACBA0051C0D1 /* AKKAAEWeakRetainingProxy.m in Sources */,
 				20997A5E34E08631D194A17E /* main.m in Sources */,
+				FC5985241E03CA09005FD7D4 /* AKKAAEAudioBufferListUtilities.m in Sources */,
 				FCDA9E8F1DFFD6830051C0D1 /* AKKAAEUtilities.m in Sources */,
 				FC3964EF1E0239F100372C4C /* AKKAAETypes.m in Sources */,
+				FC59851E1E039259005FD7D4 /* AKKAAEBufferStack.m in Sources */,
 				FCECDB451DF692B600028C68 /* AKKAAEArray.m in Sources */,
 				20997CB88E8B42C07123808C /* AppDelegate.m in Sources */,
+				FC5985211E03C9D7005FD7D4 /* AKKAAEDSPUtilties.m in Sources */,
 				FC3964F21E0249A700372C4C /* AKKAAETime.m in Sources */,
 				2099742D51E2EB039333DF94 /* ViewController.m in Sources */,
 				FCE7C7B01DF86AB4000191F3 /* AKKAAEManagedValue.m in Sources */,
