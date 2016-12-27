@@ -173,7 +173,9 @@ name->mBuffers[i].mDataByteSize -= offsetBytes; \
 
 /*
 * AKKAAEAudioBufferListCopyOnStackWithChannelSubset(name, sourceBufferList, channelSet) {
+* // 预防出现负数
 * int name_bufferCount = MIN(sourceBufferList->mNumberBuffers-1, channelSet.lastChannel) - MIN(sourceBufferList->mNumberBuffers-1, channelSet.firstChannel) + 1;
+ * // 初始化audiobufferlist
 * char name_bytes[sizeof(AudioBufferList)+(sizeof(AudioBuffer)*(name_bufferCount-1))];
 * AudioBufferList * name = (AudioBufferList*)name_bytes;
 * name->mNumberBuffers = name_bufferCount;

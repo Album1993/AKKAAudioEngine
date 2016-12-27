@@ -14,13 +14,13 @@
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/AKKAAEDSPUtilties.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/AKKAAEAudioBufferListUtilities.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEBufferStack.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAETime.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAETime.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAETypes.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEBufferStack.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAETime.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEManagedValue.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAETypes.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/Core/AKKAAEArray.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/AKKAAudioEngineSample/AKKAAudioEngine/AKKAAEUtilities.m" isTestSource="false" />

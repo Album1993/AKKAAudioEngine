@@ -18,7 +18,6 @@ extern const UInt32 AKKAAEBufferStackMaxFramesPerSlice;
 
 typedef struct AKKAAEBufferStack AKKAAEBufferStack;
 
-
 /*!
  * Initialize a new buffer stack
  *
@@ -212,10 +211,11 @@ const AudioBufferList * AKKAAEBufferStackMix(AKKAAEBufferStack * stack, int coun
 
 /*!
  * Mix two or more buffers together, with individual mix factors by which to scale each buffer
- *
+ *  将两个或多个buffers混合在一起，使用单独的混合因子来缩放每个缓冲液
  * @param stack The stack
  * @param count Number of buffers to mix
  * @param gains The gain factors (power ratio) for each buffer. You must provide 'count' values
+ * 每个缓冲器的增益因子（功率比）。 您必须提供“count”值
  * @return The resulting buffer
  */
 const AudioBufferList * AKKAAEBufferStackMixWithGain(AKKAAEBufferStack * stack, int count, const float * gains);

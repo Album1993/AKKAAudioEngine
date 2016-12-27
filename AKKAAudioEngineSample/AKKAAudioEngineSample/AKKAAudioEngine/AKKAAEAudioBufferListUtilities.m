@@ -120,11 +120,11 @@ void AKKAAEAudioBufferListAssignWithFormat(AudioBufferList * target,const AudioB
     }
 }
 
-void AKKAAEBufferListSilence(const AudioBufferList * bufferList, UInt32 offset, UInt32 length) {
+void AKKAAEAudioBufferListSilence(const AudioBufferList * bufferList, UInt32 offset, UInt32 length) {
     return AKKAAEAudioBufferListSilenceWithFormat(bufferList, AKKAAEAudioDescription, offset, length);
 }
 
-void AKKAAEBufferListSilenceWithFormat(const AudioBufferList * bufferList, AudioStreamBasicDescription audioFormat, UInt32 offset, UInt32 length) {
+void AKKAAEAudioBufferListSilenceWithFormat(const AudioBufferList * bufferList, AudioStreamBasicDescription audioFormat, UInt32 offset, UInt32 length) {
     for (int i = 0; i < bufferList->mNumberBuffers; i++) {
         memset((char *)bufferList->mBuffers[i].mData + offset * audioFormat.mBytesPerFrame, 0, length * audioFormat.mBytesPerFrame);
     }
